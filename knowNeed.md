@@ -18,3 +18,6 @@ Link giáo trình https://drive.google.com/drive/folders/1WYAyusS4m498bqCR8iyzRY
   - .. là quay ra thư mục cha
   - click mà tên file nghiêng tức là chế độ preview
   - click*2 thì sẽ hết và sẽ mở file
+
+- Bài 3: State
+- Bản chất là JS Object để quản lý state
