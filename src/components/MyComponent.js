@@ -1,53 +1,19 @@
 // Class component
 // Funtion component
 import React from "react";
+import UserInfo from "./UserInfo";
 
-class MyComponent extends React.Component{
+class MyComponent extends React.Component {
     // JSX cú pháp đặc biệt của react mà vue và angular ko có, cho phép viết code bên trong HTML
     // JSX thì chỉ cho phép bạn trả ra 1 khối hay 1 div, sẽ có cách để khắc phục nhưng chưa nên biêt
     // muốn viết tiếp các element thì chúng ta sẽ viết trong thẻ div
-    state = {
-        name: 'Jacker V',
-        address: 'Thai Binh',
-        age: 26
-    }
-
-    handleClick(event){
-        // console.log("Loan Tang");
-        // console.log(event);
-        console.log(this.state.name);
-        this.setState({
-            name: 'HoangHa'
-        })
-    }
-
-    handleOnMouseOver(event){
-        console.log(event);
-    }
-
-    handleOnChangeInput = (event) =>{
-        this.setState({
-            name: event.target.value
-        })
-    }
-
-    handleOnSubmit = (event) =>{
-        // event.preventDefault();
-        console.log(this.state);
-        
-    }
-
-    render(){
+    
+    render() {
         return (
-            <div>My name is {this.state.name} & i'm from {this.state.address}
-            <button onClick={(event) => {this.handleClick(event)}}>Click me</button>
-            <button onMouseOver={this.handleOnMouseOver}>Hover me</button>
-            <form onSubmit={(event) => {this.handleOnSubmit(event)}}>
-                <input type="text"
-                onChange={(event) => {this.handleOnChangeInput(event)}}/>
-                <button>Submit</button>
-            </form>
-            </div>   
+            <div>
+                
+                <UserInfo></UserInfo>
+            </div>
         );
     }
 }
