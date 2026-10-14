@@ -21,3 +21,10 @@ Link giáo trình https://drive.google.com/drive/folders/1WYAyusS4m498bqCR8iyzRY
 
 - Bài 3: State
 - Bản chất là JS Object để quản lý state
+
+- Bài 4: Nesting Component - Nén component
+- Hay nói khác đi về truyền vào component khác bên trong 1 component
+
+- Bài 5: Props
+- Dùng để truyền dữ liệu từ component con sang component Cha
+- Để truyền props từ Cha sang con, thì với String, Number, boolean thì để chắc chắn và code nhận diện được luôn thì nên thêm {} trước giá trị
