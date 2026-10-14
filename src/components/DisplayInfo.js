@@ -2,11 +2,13 @@ import React from "react";
 
 class DisplayInfo extends React.Component{
     render(){
+        // destructuring array/object
+        const {age, name} = this.props;//object
         //props ==> properites: tài sản 
         return(
             <div>
-                <div>My name is {this.props.name}</div>
-                <div>My age is {this.props.age}</div>
+                <div>My name is {name}</div>
+                <div>My age is {age}</div>
             </div>
         )
     }
