@@ -15,12 +15,21 @@ class MyComponent extends React.Component {
             {id: 3, name : "Ly Son", age : "16"},
         ]
     }
+
+    handleAddNewUser = (userObject) => {
+        this.setState({
+            listUsers: [userObject,...this.state.listUsers]
+        })   
+    }
+
     render() {
         const myAge = 22;
         return (
             <div>
-                <UserInfo></UserInfo>
-                <DisplayInfo listUsers={this.state.listUsers}></DisplayInfo>
+                <UserInfo handleAddNewUser = {this.handleAddNewUser}></UserInfo>
+                <DisplayInfo listUsers={this.state.listUsers}
+                
+                ></DisplayInfo>
             </div>
         );
     }
