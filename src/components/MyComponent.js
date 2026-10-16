@@ -12,14 +12,13 @@ class MyComponent extends React.Component {
         listUsers: [
             {id: 1, name : "Loan Tang", age : "22"},
             {id: 2, name : "Hoang Ha", age : "22"},
-            {id: 3, name : "Ly Son", age : "200"},
+            {id: 3, name : "Ly Son", age : "16"},
         ]
     }
     render() {
         const myAge = 22;
         return (
             <div>
-                
                 <UserInfo></UserInfo>
                 <DisplayInfo listUsers={this.state.listUsers}></DisplayInfo>
             </div>

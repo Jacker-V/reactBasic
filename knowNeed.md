@@ -20,11 +20,21 @@ Link giáo trình https://drive.google.com/drive/folders/1WYAyusS4m498bqCR8iyzRY
   - click*2 thì sẽ hết và sẽ mở file
 
 - Bài 3: State
-- Bản chất là JS Object để quản lý state
+- Bản chất là JS Object để quản lý dữ liệu nội bộ của component.
+- Khi State thay đổi, component sẽ tự động Re-render (vẽ lại giao diện).
+- KHÔNG ĐƯỢC gán trực tiếp (`this.state.name = ...`), bắt buộc phải dùng `this.setState({...})`.
+- Nên dùng Arrow Function cho các method xử lý sự kiện để không bị mất liên kết `this`.
 
-- Bài 4: Nesting Component - Nén component
-- Hay nói khác đi về truyền vào component khác bên trong 1 component
+- Bài 4: Nesting Component - Lồng ghép component
+- Chia nhỏ ứng dụng thành các component con độc lập (như xếp hình lego) và nhúng vào component Cha để dễ tái sử dụng và quản lý code.
 
-- Bài 5: Props
-- Dùng để truyền dữ liệu từ component con sang component Cha
-- Để truyền props từ Cha sang con, thì với String, Number, boolean thì để chắc chắn và code nhận diện được luôn thì nên thêm {} trước giá trị
+- Bài 5: Props (Properties)
+- Luồng truyền dữ liệu: Truyền từ component CHA XUỐNG CON (1 chiều).
+- Props là Read-only (chỉ đọc), component con KHÔNG ĐƯỢC sửa props.
+- Cú pháp truyền: String có thể dùng `"..."`, còn Number, Boolean, Array, Object, Function bắt buộc bọc trong dấu `{}`.
+- Để truyền dữ liệu từ CON LÊN CHA: Cha truyền một hàm (callback function) qua Props cho Con, Con gọi hàm đó kèm tham số để gửi dữ liệu ngược về Cha.
+
+- Bài 6: Render danh sách (map) & Thuộc tính Key
+- Khi dùng `.map()` để lặp danh sách JSX, bắt buộc phải có thuộc tính `key` ở thẻ bao bọc ngoài cùng (vd: `<div key={user.id}>`).
+- `key` giúp thuật toán Virtual DOM của React định danh duy nhất từng phần tử để biết chính xác phần tử nào bị thêm, sửa, xóa khi cập nhật giao diện.
+- KHÔNG NÊN dùng `index` làm key: Vì khi mảng bị thêm mới lên đầu hoặc xóa/sắp xếp, `index` của các phần tử bị xáo trộn, làm React nhầm lẫn trạng thái và re-render sai. Luôn ưu tiên dùng `id` duy nhất (như `user.id`).

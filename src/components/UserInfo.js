@@ -4,7 +4,7 @@ class UserInfo extends React.Component {
     state = {
         name: 'Jacker V',
         address: 'Thai Binh',
-        age: 26
+        age: 16
     }
 
     handleClick(event) {
